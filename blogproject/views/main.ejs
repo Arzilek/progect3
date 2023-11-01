@@ -1,0 +1,12 @@
+<h1>Blog Posts</h1>
+<link rel="stylesheet" type="text/css" href="/style.css">
+
+<ul>
+  <% blogPosts.forEach((post, index) => { %>
+    <li>
+      <h2><a href="/post/<%= index %>"><%= post.title %></a></h2>
+      <p><%= post.content.slice(0, 100) %><% if (post.content.length > 100) { %>... <a href="/post/<%= index %>">Read More</a><% } %></p>
+    </li>
+  <% }); %>
+</ul>
+<a href="/new">Add New Post</a>
